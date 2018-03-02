@@ -22,8 +22,8 @@
 	</table>
 	
 
-	<!--<button onclick="window.location='<spring:url value="/addBook.jsp" />'"> </br>  -->
-		<a href="addBook.jsp"> Add a book</a>
-     Add book</button>
+	<!--<button onclick="window.location='<spring:url value="addBook.jsp" />'"> </br>  -->
+		<a href="addBook.jsp"> Add a book</a> 
+
 </body>
 </html>
