@@ -36,7 +36,7 @@ public class BookController {
 			bookDao.add(book);
 			return "redirect:/books";
 		}else {
-			return "bookList";
+			return "addBook";
 		}
 		
 	}
