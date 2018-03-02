@@ -1,5 +1,7 @@
 package cs544.lab4;
 
+import javax.validation.constraints.NotNull;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Book {
@@ -10,7 +12,7 @@ public class Book {
 	private String ISBN;
 	@NotEmpty
 	private String author;
-	@NotEmpty
+	@NotNull
 	private double price;
 
 	public Book() {
