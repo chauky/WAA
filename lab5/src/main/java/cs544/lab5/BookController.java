@@ -1,8 +1,11 @@
 package cs544.lab5;
 
+import java.util.Locale;
+
 import javax.annotation.Resource;
 import javax.validation.Valid;
 
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,8 +24,11 @@ public class BookController {
 	private IBookDao bookDao;
 	
 	@RequestMapping("/")
-	public String redirectRoot() {
-		return "redirect:/books";
+	public String redirectRoot(Locale locale, Model model) {
+//		return "redirect:/books";
+        Locale currentLocale = LocaleContextHolder.getLocale();
+        model.addAttribute("locale", currentLocale);
+		return "welcome";
 	}
 	
 	@RequestMapping(value="/books", method=RequestMethod.GET)
