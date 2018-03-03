@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 import javax.validation.Valid;
 
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,6 +24,8 @@ public class BookController {
 	@Resource
 	private IBookDao bookDao;
 	
+
+	@PreAuthorize("hasRole('ROLE_SALES')")
 	@RequestMapping("/")
 	public String redirectRoot(Locale locale, Model model) {
 //		return "redirect:/books";
