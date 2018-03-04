@@ -1,11 +1,11 @@
-package cs544.lab5;
+package cs544.lab6;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import cs544.lab5.NoSuchResourceException;
+import cs544.lab6.NoSuchResourceException;
 
 public class BookDao implements IBookDao {
 	private static int idCount = 1;

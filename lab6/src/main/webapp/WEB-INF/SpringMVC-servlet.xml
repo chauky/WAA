@@ -19,7 +19,7 @@
 	<mvc:annotation-driven />
 
 
-	<bean id="bookDao" class="cs544.lab5.BookDao" />
+	<bean id="bookDao" class="cs544.lab6.BookDao" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->

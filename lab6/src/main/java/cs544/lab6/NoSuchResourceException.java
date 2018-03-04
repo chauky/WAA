@@ -1,4 +1,4 @@
-package cs544.lab5;
+package cs544.lab6;
 
 public class NoSuchResourceException extends RuntimeException {
 	private static final long serialVersionUID = 1L;

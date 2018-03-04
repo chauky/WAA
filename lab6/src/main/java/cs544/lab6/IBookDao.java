@@ -1,4 +1,4 @@
-package cs544.lab5;
+package cs544.lab6;
 
 import java.util.List;
 

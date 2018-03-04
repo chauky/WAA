@@ -12,11 +12,11 @@
 	<form:form modelAttribute="book" action="books" method="post">
 		<form:errors path="*" cssClass="errorblock" element="div" />
 		<table>
-			<tr>
+<%-- 			<tr>
 				<td>Title:</td>
 				<td><form:input path="title" /></td>
 				<td><form:errors path="make" cssClass="error"/></td>
-			</tr>
+			</tr> --%>
 			<tr>
 				<td>ISBN:</td>
 				<td><input type="text" name="isbn" /></td>

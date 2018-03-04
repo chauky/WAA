@@ -1,4 +1,4 @@
-package cs544.lab5;
+package cs544.lab6;
 
 import java.util.Locale;
 
@@ -25,7 +25,6 @@ public class BookController {
 	private IBookDao bookDao;
 	
 
-	@PreAuthorize("hasRole('ROLE_SALES')")
 	@RequestMapping("/")
 	public String redirectRoot(Locale locale, Model model) {
 //		return "redirect:/books";
