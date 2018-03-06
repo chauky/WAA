@@ -21,20 +21,20 @@ public class TeamService {
 		return teamDao.getAll();
 	}
 	
-	public void Save() {
-		teamDao.Create();
+	public void Save(Team team) {
+		teamDao.Create(team);
 	}
 	
-	public Team getTeam(String teamKey) {
+	public Team getTeam(int teamKey) {
 		return teamDao.Retrive(teamKey);
 	}
 	
-	public void Update(String teamKey) {
-		teamDao.Update(teamKey);
+	public void Update(int teamKey, Team team) {
+		teamDao.Update(teamKey, team);
 		
 	}
 	
-	public void Delete(String teamKey) {
+	public void Delete(int teamKey) {
 		teamDao.Delete(teamKey);
 	}
 

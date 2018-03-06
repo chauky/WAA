@@ -19,19 +19,30 @@ public class StadiumDao {
 		return new ArrayList<Stadium>(stadiums.values());
 	}
 	
-	public void Create() {
-		
+	public void Create(Stadium stadium) {
+		stadium.setStadiumKey(idCount);
+		stadiums.put(idCount, stadium);
+		idCount++;
 	}
 	
-	public Stadium Retrive(String stadiumKey) {
-		return null;
+	public Stadium Retrive(int stadiumKey) {
+		Stadium result = stadiums.get(stadiumKey);
+
+		if (result == null) {
+			System.out.print("cannot get stadium with stadiumKey");
+		}
+
+		return result;
 	}
 	
-	public void Update(String stadiumKey) {
-		
+	public void Update(int stadiumKey,Stadium stadium) {
+		stadiums.put(stadiumKey, stadium);
 	}
 	
-	public void Delete(String stadiumKey) {
-		
+	public void Delete(int stadiumKey) {
+		Stadium removed = stadiums.remove(stadiumKey);
+		if (removed == null) {
+			System.out.print("Cannot remove stadium");
+		}
 	}
 }

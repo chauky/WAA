@@ -1,6 +1,6 @@
 package mum.edu.cs545;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class Team {
@@ -19,9 +19,8 @@ public class Team {
 		super();
 	}
 	
-	public Team(int teamKey, String name, String city, String mascot, List<Player> players, String homeUniform,
+	public Team(String name, String city, String mascot, List<Player> players, String homeUniform,
 			String visitUniform, List<Match> matchesAsHome, List<Match> matchesAsVisitor) {
-		this.teamKey = teamKey;
 		this.name = name;
 		this.city = city;
 		this.mascot = mascot;

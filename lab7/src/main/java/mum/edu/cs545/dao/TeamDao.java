@@ -23,33 +23,40 @@ public class TeamDao {
 		players.add(new Player("1","Ronaldo",20, "Attacher"));
 		players.add(new Player("2","David",22, "Goal Keeper"));
 		
-//		add(new Team());
-//		add(new Team());
+		Create(new Team("name","city", "mascot",players,"homeUniform", "visitUniform", null, null));
+		Create(new Team("name","city", "mascot",players,"homeUniform", "visitUniform", null, null));
+		
 	}
 	
 	public List<Team> getAll() {
 		return new ArrayList<Team>(teams.values());
 	}
-	
-	public void add(Team team) {
+
+	public void Create(Team team) {
 		team.setTeamKey(idCount);
 		teams.put(idCount, team);
 		idCount++;
 	}
+	
+	
+	public Team Retrive(int teamKey) {
+		Team result = teams.get(teamKey);
 
-	public void Create() {
-		
+		if (result == null) {
+			System.out.print("cannot get team with teamkey");
+		}
+
+		return result;
 	}
 	
-	public Team Retrive(String teamKey) {
-		return null;
+	public void Update(int teamKey, Team team) {
+		teams.put(teamKey, team);
 	}
 	
-	public void Update(String teamKey) {
-		
-	}
-	
-	public void Delete(String teamKey) {
-		
+	public void Delete(int teamKey) {
+		Team removed = teams.remove(teamKey);
+		if (removed == null) {
+			System.out.print("Cannot remove team");
+		}
 	}
 }

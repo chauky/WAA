@@ -23,6 +23,7 @@
 				<td>State:</td>
 				<td><input type="text" name="state" /></td>
 			</tr>
+			
  			<form:select path="players">
 				<c:forEach var="player" items="${players}">
 					<option><c:out value="${player}" /></option>

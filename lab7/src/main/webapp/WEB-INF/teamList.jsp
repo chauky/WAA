@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>teams currently in the shop</title>
+<title>List of teams currently </title>
 </head>
 <body>
 	<h1>teams currently in the shop</h1>
