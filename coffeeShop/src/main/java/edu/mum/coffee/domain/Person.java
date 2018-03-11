@@ -20,8 +20,10 @@ public class Person {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Address address;
 	private String phone;
-	private boolean enable;
-
+	private boolean enable = true;
+	private String role;
+	private String password;
+	
 	public long getId() {
 		return id;
 	}
@@ -57,10 +59,28 @@ public class Person {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 
 	public Address getAddress() {
 		return address;
 	}
+	
+	
+	public String getPassword() {
+		return role;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 
 	public void setAddress(Address address) {
 		this.address = address;

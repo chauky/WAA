@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page session="false"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd">
 <html>
 <head>
@@ -25,6 +26,7 @@
 			<th>Last Name</th>
 			<th>Email</th>
 			<th>Phone</th>
+			<th>Role</th>
 			<th></th>
 		</tr>
 		<c:forEach var="person" items="${persons}">
@@ -33,11 +35,14 @@
 				<td>${person.lastName}</td>
 				<td>${person.email}</td>
 				<td>${person.phone}</td>
+				<td>${person.role}</td>
 				<td><a href="personList/${person.id}">edit</a></td>
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="addPerson"> Add a person</a>
+	<sec:authorize access ="hasAuthority('ADMIN')">
+		<a href="addPerson"> Add a person</a>
+	</sec:authorize>
 
 </body>
 </html>

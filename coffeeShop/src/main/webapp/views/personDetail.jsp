@@ -32,9 +32,18 @@
 				<td><input type="text" name="email" value="${person.email}" />
 				</td>
 			</tr>
+						<tr>
+				<td>Password:</td>
+				<td><input type="text" name="password" value="${person.password}" />
+				</td>
+			</tr>
 			<tr>
 				<td>Phone:</td>
 				<td><input type="text" name="phone" value="${person.phone}" /></td>
+			</tr>
+			<tr>
+				<td>Role:</td>
+				<td><input type="text" name="role" value="${person.role}" /></td>
 			</tr>
 		</table>
 		<!-- 	<input type="hidden" name="_csrf" value="<your_csrf_token>" /> -->

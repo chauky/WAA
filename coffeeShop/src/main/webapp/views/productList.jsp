@@ -1,6 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page session="false"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd">
 <html>
 <head>
@@ -25,7 +28,10 @@
 			<th>Description</th>
 			<th>Price</th>
 			<th>Type</th>
-			<th></th>
+			<sec:authorize access="hasAuthority('ADMIN')">
+				<th>Operation</th>
+			</sec:authorize>
+			<th>Order</th>
 		</tr>
 		<c:forEach var="product" items="${products}">
 			<tr>
@@ -33,17 +39,22 @@
 				<td>${product.description}</td>
 				<td>${product.price}</td>
 				<td>${product.productType}</td>
-				<td style="width: 200px"><a href="productList/${product.id}">
-						edit</a> <%-- <input type="button" value="delete" onclick="deleteProduct(${product.id})"> --%>
-					<a href='/products/productList'
-					onclick="deleteProduct(${product.id})">| delete</a>
+				<sec:authorize access="hasAuthority('ADMIN')">
+					<td style="width: 100px"><a href="productList/${product.id}">
+							edit </a><a href='/products/productList'
+						onclick="deleteProduct(${product.id})">| delete</a></td>
+				</sec:authorize>
+				<td style="width: 200px">
 					<form action="order/${product.id}/2">
-						<input type="text" name="quantity" value="1" size="2" /> <input	type="submit" value="order" />
-					</form></td>
-
+						<input type="text" name="quantity" value="1" size="2" /> <input
+							type="submit" value="order" />
+					</form>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="addProduct"> Add a product</a>
+	<sec:authorize access="hasAuthority('ADMIN')">
+		<a href="addProduct"> Add a product</a>
+	</sec:authorize>
 </body>
 </html>
