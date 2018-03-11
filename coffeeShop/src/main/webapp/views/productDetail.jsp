@@ -31,7 +31,6 @@
 				<td><input type="text" name="price" value="${product.price}" />
 				</td>
 			</tr>
-
 			<tr>
 				<td>Type:</td>
 				<td><input type="text" name="productType"

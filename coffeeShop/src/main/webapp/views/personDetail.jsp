@@ -14,13 +14,12 @@
 </head>
 <body>
 	<form action="/persons/updatePerson" method="POST">
-		<h1>Add a person</h1>
+		<h1>Add/Update a person</h1>
 		<table cellspacing="50">
 			<tr>
 				<td>First Name:</td>
 				<td><input type="text" name="firstName"
 					value="${person.firstName}" /></td>
-
 			</tr>
 			<tr>
 				<td>Last Name:</td>
@@ -32,10 +31,10 @@
 				<td><input type="text" name="email" value="${person.email}" />
 				</td>
 			</tr>
-						<tr>
+			<tr>
 				<td>Password:</td>
-				<td><input type="text" name="password" value="${person.password}" />
-				</td>
+				<td><input type="text" name="password"
+					value="${person.password}" /></td>
 			</tr>
 			<tr>
 				<td>Phone:</td>

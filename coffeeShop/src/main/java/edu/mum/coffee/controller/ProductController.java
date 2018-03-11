@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+
 import edu.mum.coffee.domain.Order;
 import edu.mum.coffee.domain.Orderline;
 import edu.mum.coffee.domain.Person;
@@ -75,12 +77,8 @@ public class ProductController {
 
 
 	@RequestMapping("/delete/{id}")
-	public String detete(@PathVariable("id") int id) {
-		try {
-			productRepository.delete(id);
-		}catch (Exception e) {
-			System.out.println("Cannot delete product");
-		}
+	public String detete(@PathVariable("id") int id) throws MySQLIntegrityConstraintViolationException {
+		productRepository.delete(id);
 		return"productDetail";
 	}
 	

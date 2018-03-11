@@ -9,6 +9,7 @@
 				<li><a href="/orders/orderList"> List of Orders</a></li>
 			</sec:authorize>
 			<li><a href="/products/productList"> List of Products</a></li>
+			<li><a href="/persons/updateInfo"> Update info</a></li>
 			<li><a class="button" data-submit="parent" href="/logout">Log
 					out</a></li>
 		</ul>
