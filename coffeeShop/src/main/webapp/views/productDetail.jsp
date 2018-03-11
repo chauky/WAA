@@ -13,7 +13,7 @@
 <jsp:include page="/views/navigationBar.jsp" />
 </head>
 <body>
-	<form action="updateProduct" method="POST">
+	<form action="/products/updateProduct" method="POST">
 		<h1>Add a product</h1>
 		<table cellspacing="50">
 			<tr>
