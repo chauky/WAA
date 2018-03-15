@@ -4,15 +4,17 @@ import java.io.Serializable;
 import java.util.*;
 
 import javax.faces.bean.SessionScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named("account")
 @SessionScoped
 public class Account implements Serializable {
-	long accountnumber = 1234L;
+	long accountnumber;
 	Collection<AccountEntry> entryList = new ArrayList<AccountEntry>();
 	Customer customer;
-
+	
+	@Inject
 	public Account (long accountnr){
 		this.accountnumber = accountnr;
 	}

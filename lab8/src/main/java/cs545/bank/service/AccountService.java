@@ -3,6 +3,7 @@ package cs545.bank.service;
 import java.io.Serializable;
 import java.util.Collection;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Named;
 
@@ -14,7 +15,7 @@ import cs545.bank.jms.IJMSSender;
 import cs545.bank.jms.JMSSender;
 
 @Named
-@SessionScoped
+@ApplicationScoped
 public class AccountService implements IAccountService, Serializable {
 	private IAccountDAO accountDAO;
 	private ICurrencyConverter currencyConverter;

@@ -2,6 +2,13 @@ package cs545.bank.domain;
 
 import java.util.Date;
 
+import javax.faces.bean.SessionScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
+
+
+@Named
+@SessionScoped
 public class AccountEntry {
 	private Date date;
 	private double amount;
@@ -9,7 +16,9 @@ public class AccountEntry {
 	private String fromAccountNumber;
 	private String fromPersonName;
 
+	@Inject
 	public AccountEntry() {
+		this.fromAccountNumber = "1234234";
 	}
 
 	public AccountEntry(Date date, double amount, String description, String fromAccountNumber, String fromPersonName) {

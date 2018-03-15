@@ -10,29 +10,12 @@
 <h:body>
 	<h1>Welcome</h1>
 	<ul>
-		<li><h:link value="Create an account" outcome="createAccount" /></li>
+		<li><h:link value="Create an account" outcome="create" /></li>
 		<li><h:link value="Deposit Money" outcome="depositMoney" /></li>
 		<li><h:link value="List all account" outcome="listAllAccounts" /></li>
 		<li><h:link value="View Account Detail" outcome="viewAccountDetail" /></li>
 		<li><h:link value="Withdraw Money" outcome="withdrawMoney" /></li>
 	</ul>
 
-	<!-- <h:form prependId="false">
-     <    <h3>Please enter your name and password.</h3>
-         <table>
-            <tr>
-               <td>Name:</td>
-               <td><h:inputText value="#{user.name}" id="name"/></td>
-            </tr>
-            <tr>
-               <td>Password:</td>
-               <td><h:inputSecret value="#{user.password}" id="password"/></td>
-            </tr>
-         </table>
-         <p><h:commandButton value="Login">
-            <f:ajax execute="name password" render="out"/>
-         </h:commandButton></p>
-         <h3><h:outputText id="out" value="#{user.greeting}"/></h3> 
-      </h:form> -->
 </h:body>
 </html>
