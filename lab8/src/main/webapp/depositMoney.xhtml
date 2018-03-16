@@ -14,7 +14,9 @@
 			<h:outputLabel>Account Number:</h:outputLabel>
      	   <h:inputText  converter="javax.faces.Long" value="#{accountBean.accNumber}"></h:inputText> <br/>
 			<h:outputLabel>Amount:</h:outputLabel>
-     	   <h:inputText  converter="javax.faces.Double" value="#{accountBean.amount}"></h:inputText> <br/>
+     	   <h:inputText  converter="javax.faces.Double" value="#{accountBean.amount}">
+     	   <f:validator validatorId="positiveNumberValidator" />
+     	   </h:inputText> <br/>
      	   <h:commandButton value="Submit" actionListener="#{accountBean.deposit()}" action="index.xhtml"></h:commandButton>
     	</h:form>
     </h:body>
